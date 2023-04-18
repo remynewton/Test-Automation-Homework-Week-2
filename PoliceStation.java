@@ -59,6 +59,27 @@ class Person {
     }
 }
 
+class Beast {
+    public String name;
+    public int age;
+    public boolean isFurry;
+
+    public Beast(String name, int age, boolean isFurry) {
+        this.name = name;
+        this.age = age;
+        this.isFurry = true;
+    }
+}
+
+class policeDog extends Beast {
+    public String breed;
+    
+    public policeDog(String name, int age, boolean isFurry, String breed) {
+        super(name, age, isFurry);
+        this.breed = breed;
+    }
+}
+
 class Officer extends Person {
     private int badgeNumber;
     private String department;
