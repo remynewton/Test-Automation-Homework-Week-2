@@ -9,9 +9,9 @@ class PoliceStation {
         Case case1 = new Case("repeated Java instruction", officer1, criminal1, victim1, false);
         Jail jail1 = new Jail(50);
 
-        System.out.println("Officer " + officer1.getName() + " from " + officer1.getDepartment() + " department is investigating a case of " + case1.getDescription() + ".");
-        System.out.println("The victim of the crime is " + victim1.getName() + ".");
-        System.out.println("The officer has apprehended the criminal. His name is " + criminal1.getName() + " and his age is " + criminal1.getAge() + ".");
+        System.out.println("Officer " + officer1.getName() + " from " + officer1.getRank() + " department is investigating a case of " + case1.getDescription() + ". That's " + officer1.getProfile() + ".");
+        System.out.println("The victim of the crime is " + victim1.getName() + ". " + victim1.getProfile());
+        System.out.println("The officer has apprehended the criminal. " + criminal1.getProfile());
         jail1.addInmate(criminal1);
         String verb;
         if (jail1.getInmates().size() > 1) {

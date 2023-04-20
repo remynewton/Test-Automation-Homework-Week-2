@@ -26,4 +26,28 @@ public class Criminal extends Person {
         }
         this.crimes = crimeList;
     }
+
+    @Override
+    public String toString() {
+        return getProfile();
+    }
+    
+    @Override
+    public int hashCode() {
+        return getProfile().hashCode();
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Criminal) {
+            Criminal otherCriminal = (Criminal) obj;
+            return getProfile().equals(otherCriminal.getProfile());
+        }
+        return false;
+    }
+    
+    @Override
+    public String getProfile() {
+        return "The criminal " + getName() + " has committed " + getCrimes() + ".";
+    }
 }

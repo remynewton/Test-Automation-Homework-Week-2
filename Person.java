@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Person {
-    private String name;
-    private ArrayList<Integer> DOB;
-    private String address;
+public abstract class Person {
+    protected String name;
+    protected ArrayList<Integer> DOB;
+    protected String address;
 
     public Person(String name, String DOB, String address) {
         this.name = name;
@@ -48,4 +48,6 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public abstract String getProfile();
 }

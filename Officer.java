@@ -1,13 +1,11 @@
-import java.util.ArrayList;
-
 public class Officer extends Person {
     private int badgeNumber;
-    private String department;
+    private String rank;
 
-    public Officer(String name, String DOB, String address, int badgeNumber, String department) {
+    public Officer(String name, String DOB, String address, int badgeNumber, String rank) {
         super(name, DOB, address);
         this.badgeNumber = badgeNumber;
-        this.department = department;
+        this.rank = rank;
     }
 
     public int getBadgeNumber() {
@@ -18,11 +16,36 @@ public class Officer extends Person {
         this.badgeNumber = badgeNumber;
     }
 
-    public String getDepartment() {
-        return department;
+    public String getRank() {
+        return rank;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
+
+    @Override
+    public String getProfile() {
+        return "Officer " + getName() + " (" + getRank() + "), Badge #" + getBadgeNumber();
+    }
+
+    // Override methods from Object class
+    @Override
+    public String toString() {
+        return getProfile();
+    }
+
+    @Override
+    public int hashCode() {
+        return getProfile().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Officer) {
+            Officer otherOfficer = (Officer) obj;
+            return getProfile().equals(otherOfficer.getProfile());
+        }
+        return false;
     }
 }
