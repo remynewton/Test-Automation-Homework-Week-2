@@ -11,7 +11,7 @@ class PoliceStation {
 
         System.out.println("Officer " + officer1.getName() + " from " + officer1.getDepartment() + " department is investigating a case of " + case1.getDescription() + ".");
         System.out.println("The victim of the crime is " + victim1.getName() + ".");
-        System.out.println("The officer has apprehended the criminal. His name is " + criminal1.getName() + ".");
+        System.out.println("The officer has apprehended the criminal. His name is " + criminal1.getName() + " and his age is " + criminal1.getAge() + ".");
         jail1.addInmate(criminal1);
         String verb;
         if (jail1.getInmates().size() > 1) {
